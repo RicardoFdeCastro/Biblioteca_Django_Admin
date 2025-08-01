@@ -55,10 +55,13 @@ ROOT_URLCONF = 'bliblioteca.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'bliblioteca' / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -130,3 +133,7 @@ EMAIL_HOST_USER = 'seuemail@gmail.com'
 EMAIL_HOST_PASSWORD = 'sua_senha'
 EMAIL_USE_TLS = True
 
+# If you want to specify a custom templates directory, update the 'DIRS' key in the existing TEMPLATES block above:
+# For example, replace 'DIRS': [] with:
+# 'DIRS': [BASE_DIR / 'bliblioteca' / 'templates'],
+# Remove this duplicated and incomplete TEMPLATES block.

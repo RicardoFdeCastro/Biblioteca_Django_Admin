@@ -41,7 +41,10 @@ class Emprestimo(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     livro = models.ForeignKey(Livro, on_delete=models.CASCADE)
     data_retirada = models.DateField(default=timezone.now)
-    data_devolucao_prevista = models.DateField(default=lambda: timezone.now() + timedelta(days=7))
+    def get_data_devolucao_prevista():
+        return timezone.now().date() + timedelta(days=7)
+
+    data_devolucao_prevista = models.DateField(default=get_data_devolucao_prevista)
     data_devolucao_real = models.DateField(blank=True, null=True)
 
     def __str__(self):
