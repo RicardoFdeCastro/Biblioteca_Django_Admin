@@ -1,0 +1,19 @@
+<h1>Empréstimos de {{ cliente.nome }}</h1>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Livro</th>
+        <th>Retirada</th>
+        <th>Previsto</th>
+        <th>Devolução</th>
+        <th>Multa</th>
+    </tr>
+    {% for emp in emprestimos %}
+    <tr {% if emp.atrasado %} style="background:#fdd;" {% endif %}>
+        <td>{{ emp.livro.titulo }}</td>
+        <td>{{ emp.data_retirada }}</td>
+        <td>{{ emp.data_devolucao_prevista }}</td>
+        <td>{{ emp.data_devolucao_real|default:"-" }}</td>
+        <td>R$ {{ emp.multa }}</td>
+    </tr>
+    {% endfor %}
+</table>

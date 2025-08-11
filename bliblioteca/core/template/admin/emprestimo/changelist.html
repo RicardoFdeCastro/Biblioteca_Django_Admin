@@ -1,0 +1,16 @@
+{% extends "admin/change_list.html" %}
+
+{% block content %}
+<h2>📊 Livros mais emprestados</h2>
+<table border="1" cellpadding="5">
+  <tr><th>Livro</th><th>Total Empréstimos</th></tr>
+  {% for item in livros_populares %}
+  <tr>
+    <td>{{ item.livro__titulo }}</td>
+    <td>{{ item.total }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<br>
+{{ block.super }}
+{% endblock %}
