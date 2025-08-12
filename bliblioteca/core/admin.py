@@ -28,7 +28,7 @@ class LivroAdmin(admin.ModelAdmin):
 class EmprestimoAdmin(ExportMixin, admin.ModelAdmin):
     list_display = ['cliente', 'livro', 'data_retirada', 'data_devolucao_prevista', 'data_devolucao_real', 'multa']
 
-    change_list_template = "admin/emprestimos_changelist.html"
+    #change_list_template = "admin/emprestimos_changelist.html"
 
 def changelist_view(self, request, extra_context=None):
     from django.db.models import Count
