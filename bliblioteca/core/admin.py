@@ -9,8 +9,8 @@ from import_export.admin import ExportMixin
 
 @admin.register(Funcionario)
 class FuncionarioAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'email', 'telefone', 'data_admissao']
-    search_fields = ['nome', 'email']
+    list_display = ['nome', 'cargo', 'email', 'telefone', 'data_admissao',]
+    search_fields = ['nome', 'email', 'cargo']
     list_per_page = 20
 
 

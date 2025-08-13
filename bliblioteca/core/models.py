@@ -7,6 +7,7 @@ from datetime import timedelta
 
 class Funcionario(models.Model):
     nome = models.CharField(max_length=100)
+    cargo = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(unique=True)
     telefone = models.CharField(max_length=15, blank=True, null=True)
     data_admissao = models.DateField(default=timezone.now)
