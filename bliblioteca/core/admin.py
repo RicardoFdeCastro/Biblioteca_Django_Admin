@@ -11,6 +11,7 @@ from import_export.admin import ExportMixin
 class FuncionarioAdmin(admin.ModelAdmin):
     list_display = ['nome', 'email', 'telefone', 'data_admissao']
     search_fields = ['nome', 'email']
+    list_per_page = 20
 
 
 @admin.register(Cliente)
